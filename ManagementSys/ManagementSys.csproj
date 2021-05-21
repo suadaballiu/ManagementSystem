@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\Script\bootstrap.js" />
+    <None Include="wwwroot\js\Script\bootstrap.min.js" />
+    <None Include="wwwroot\js\Script\jquery-1.10.2.intellisense.js" />
+    <None Include="wwwroot\js\Script\jquery-1.10.2.js" />
+    <None Include="wwwroot\js\Script\jquery-1.10.2.min.js" />
+    <None Include="wwwroot\js\Script\jquery-1.10.2.min.map" />
+    <None Include="wwwroot\js\Script\jquery.validate-vsdoc.js" />
+    <None Include="wwwroot\js\Script\jquery.validate.js" />
+    <None Include="wwwroot\js\Script\jquery.validate.min.js" />
+    <None Include="wwwroot\js\Script\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\js\Script\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\js\Script\modernizr-2.6.2.js" />
+    <None Include="wwwroot\js\Script\respond.js" />
+    <None Include="wwwroot\js\Script\respond.min.js" />
+    <None Include="wwwroot\js\Script\_references.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+</Project>
