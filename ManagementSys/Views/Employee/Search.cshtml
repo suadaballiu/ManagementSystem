@@ -1,14 +1,21 @@
 ﻿@model IEnumerable<ManagementSys.Models.Employee>
 
 @{
-    ViewData["Title"] = "IndexP";
+    ViewData["Title"] = "Search";
 }
 
 @{
-    Layout = "_Layout";
+    Layout = "_LayoutAdmin";
 }
 
 
+<form asp-controller="Employee" asp-action="Search">
+    <p>
+        Search by first name, employee id or work position:<input type="text" name="SearchString" />
+        <input type="submit" value="Search" />
+    </p>
+
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -30,12 +37,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Position)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CV)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IMG)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -61,16 +63,8 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Position)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CV)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IMG)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { @id = item.EmployeeID }) |
-                    @Html.ActionLink("Delete", "Delete", new { @id = item.EmployeeID })
-                </td>
+               
+               
             </tr>
         }
     </tbody>

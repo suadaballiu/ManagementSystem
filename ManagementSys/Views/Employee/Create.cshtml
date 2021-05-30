@@ -3,10 +3,13 @@
 @{
     ViewData["Title"] = "Create";
 }
+@{
+    Layout = "_Layout";
+}
 
-<h1>Create</h1>
 
-<h4>Employee</h4>
+
+<h4>Add new employee</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -44,13 +47,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="CV" class="control-label"></label>
-                <input asp-for="CV" class="form-control" />
+                <input type="file" name="CV" id="CV" style="width: 100%;" />
                 <span asp-validation-for="CV" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IMG" class="control-label"></label>
-                <input asp-for="IMG" class="form-control" />
                 <span asp-validation-for="IMG" class="text-danger"></span>
+                <input type="file" name="IMG" id="IMG" style="width: 100%;" />
+
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -59,9 +63,7 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

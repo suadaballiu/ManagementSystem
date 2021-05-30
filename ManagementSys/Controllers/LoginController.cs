@@ -30,6 +30,7 @@ namespace ManagementSys.Controllers
         public ActionResult LogOut()
         {
             SignOut();
+            TempData["Role"] = 0;
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]
@@ -48,21 +49,26 @@ namespace ManagementSys.Controllers
             {
 
                 TempData["Role"] = "1";
-                return Redirect("/Employee/Index/1");
+                TempData.Keep("Role");
+                return Redirect("/Employee/Index");
             }
             else if (!String.IsNullOrEmpty(userName) && role == "hradmin")
             {
                 TempData["Role"] = "2";
+                TempData.Keep("Role");
+
                 return Redirect("/Employee/IndexP/2");
             }
             else if (!String.IsNullOrEmpty(userName) && role == "financeadmin")
             {
                 TempData["Role"] = "3";
+                TempData.Keep("Role");
                 return Redirect("~/Employee/IndexP/3");
             }
             else if (!String.IsNullOrEmpty(userName) && role == "itadmin")
             {
                 TempData["Role"] = "4";
+                TempData.Keep("Role");
                 return Redirect("~/Employee/IndexP/4");
             }
             else
@@ -70,6 +76,7 @@ namespace ManagementSys.Controllers
                 TempData["Message"] = "Login failed.User name or password doesn't exist.";
 
                 con.Close();
+                TempData.Keep("Role");
                 return Redirect("~/Home/Index");
             }
 
